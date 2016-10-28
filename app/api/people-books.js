@@ -15,14 +15,7 @@ router.post('/', function (req, res, next) {
         states: ''
     }], i = 0;
     let books = [];
-  /*  Book.remove({
-
-    }, function (e) {
-        if (e) res.send(e.message);
-        else console.log("删除成功");
-    });*/
     Book.find({}, function (err, people_book) {
-        console.log("all book: "+people_book);
         if (err) return next(err);
         _.map(people_book, function ({
             author, name, press, images, count, price, state, _id
