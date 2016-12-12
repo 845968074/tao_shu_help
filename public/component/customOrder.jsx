@@ -89,14 +89,14 @@ class Book_list extends React.Component {
                 if (err) alert("页面错误");
                 if (res.statusCode === 201) {
                     this.setState({isremove: true});
+                    document.getElementById(this.state.book_id).style.display = "none";
                     alert(res.text);
                 }
-                hashHistory.push('/index');
             });
     }
 
     render() {
-        return <div>
+        return <div id={this.state.book_id}>
             <div>
                 <h4>书名：{this.state.name}</h4>
                 <h4>卖家：{this.state.publisher}</h4>
